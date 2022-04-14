@@ -35,10 +35,14 @@ namespace ProjetoBanco.Models
             return NumeroConta;
         }
         public void Sacar(double valor){
-
+           Saldo = Saldo - valor;
         }
         public void Depositar(double valor){
-            
+            Saldo = Saldo + valor;
+        }
+
+        public virtual void ExibirSaldo(){
+            Console.WriteLine($"O saldo da conta é: {Saldo}");
         }
     }
 }
